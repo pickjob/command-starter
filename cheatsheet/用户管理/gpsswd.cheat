@@ -1,0 +1,6 @@
+% gpasswd
+@ common
+
+; gpasswd [option] GROUP: 编辑组
+;       --add USER: 添加用户
+；      --delete USER: 删除用户

@@ -1,0 +1,12 @@
+% useradd
+@ common
+
+# 添加用户
+useradd --create-home <USER>
+
+; useradd [options] LOGIN: 新增用户
+;       --create-home: 创建用户目录
+;       --home-dir HOME_DIR: 指定用户目录
+;       --user-group: 用户名和组名相同
+;       --groups GROUPS: 指定额外组
+;       --shell SHELL: 指定shell

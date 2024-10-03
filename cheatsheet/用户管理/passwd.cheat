@@ -1,0 +1,4 @@
+% passwd
+@ common
+
+; passwd [options] [LOGIN]: 修改密码

@@ -1,0 +1,12 @@
+% usermod
+@ common
+
+# 编辑用户
+usermod --append --groups <GROUP> --shells /bin/zsh <USER>
+
+; usermod [options] LOGIN: 编辑用户
+;       --home HOME_DIR: 改变用户目录
+;       --append --groups GROUPS: 新增用户组
+;       --groups GROUPS: 指定用户组
+;       --shell SHELL: 改变用户SHELL
+;       --login NEW_LOGIN: 改变用户名
