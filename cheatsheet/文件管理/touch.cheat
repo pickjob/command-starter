@@ -1,0 +1,4 @@
+% touch
+@ common
+
+; touch [OPTION]... FILE: 更新文件时间、创建文件

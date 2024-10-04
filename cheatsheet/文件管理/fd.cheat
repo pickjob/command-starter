@@ -1,0 +1,30 @@
+% fd
+@ common
+
+# 查找文件并执行
+fd <pattern> <path> --exec echo {}
+
+; fd [OPTIONS] [pattern] [path]: 查找文件
+;       --color=always
+;       --hidden: 包括隐藏目录、文件
+;       --max-depth <depth> / --min-depth <depth>: 查找目录层级
+;       --no-ignore: 包括忽略目录(.gitignore .ignore .fdignore)
+;       --exclude <pattern>: 排除路径表达式
+;       --glob / --regex: 通配符/正则表达式
+;       --ignore-case / --case-sensitive: 忽略大小写 / 大小写敏感
+;       --type <filetype>:
+;           f / file: regular files
+;           d / directory: directories
+;           x / executable: executables
+;           e / empty: empty files or directories
+;           s / socket: socket
+;           p / pipe: named pipe (FIFO)
+;       --owner <user:group>: 所有者 '!john:students'
+;       --exec <cmd>
+;           {}: path
+;           {/}:  basename
+;           {//}: parent directory
+;           {.}:  path without file extension
+;           {/.}: basename without file extension
+;
+;       pattern: 默认正则, -- 开头, 防止表达式中出现-

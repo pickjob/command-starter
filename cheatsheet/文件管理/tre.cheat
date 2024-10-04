@@ -1,0 +1,9 @@
+% tre
+@ common
+
+; tre [OPTIONS] [PATH]: 文件树
+;       --color
+;       --directories
+;       --exclude <PATTERN>
+;       --limit <LIMIT>: 最大层级
+;       --all

@@ -1,0 +1,8 @@
+% chmod
+@ common
+
+; chmod [OPTION]... MODE[,MODE]... FILE: 变更文件权限(读、写、执行)
+;       --recursive: 循环遍历目录
+;       --verbose
+;
+;       +/- rwx 421

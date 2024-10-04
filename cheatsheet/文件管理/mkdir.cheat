@@ -1,0 +1,7 @@
+% mkdir
+@ common
+
+; mkdir [OPTION]... DIRECTORY...: 创建目录
+;       --mode=MODE: 设置目录下文件属性
+;       --parents: 创建父目录
+;       --verbose

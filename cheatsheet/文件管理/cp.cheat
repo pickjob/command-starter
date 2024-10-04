@@ -1,0 +1,7 @@
+% cp
+@ common
+
+; cp [OPTION]... [-T] SOURCE DEST: 复制文件
+;       --force: 覆盖
+；      --recursive: 循环遍历目录
+;       --verbose

@@ -1,0 +1,17 @@
+% lsd
+@ common
+
+# 列出文件
+lsd --long --total-size --timesort .
+
+; lsd [OPTIONS] [FILE]...: 列出文件
+;       --long
+;       --total-size
+;       --tree
+;       --recursive
+;       --all
+; 
+;       --sizesort
+;       --timesort
+;       --extensionsort
+;       --reverse

@@ -1,0 +1,6 @@
+% mv
+@ common
+
+; mv [OPTION]... [-T] SOURCE DEST: 移动文件/目录
+;       
+;       --verbose

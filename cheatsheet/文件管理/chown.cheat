@@ -1,0 +1,6 @@
+% chown
+@ common
+
+; chown [OPTION]... [OWNER][:[GROUP]] FILE: 变更文件归属
+;       --recursive: 循环遍历目录
+;       --verbose

@@ -1,0 +1,7 @@
+% ln
+@ common
+ 
+; ln [OPTION]... [-T] TARGET LINK_NAME: 创建链接
+;       --force: 覆盖
+;       --symbolic / --physical: 软连接 / 硬链接
+;       --verbose

@@ -1,0 +1,52 @@
+% tar
+@ common
+
+# 压缩归档
+tar --create --<compress_type> --file <directory>.tar.<compress_type> --verbose <directory>
+
+# 解压归档
+tar --extract --file <extract_file> --verbose
+
+$ compress_type: echo "xz gzip" | tr ' ' '\n'
+$ extract_file: ls *.tar.*
+
+; tar
+;       --create --file=<file> OPTIONS file ...
+;           tar --create --file=*.xz */*
+;       --append --file=<file> OPTIONS file ...
+;       --list --file=<file>
+;       --extract --file=<file>
+;       --directory=DIR
+;       OPTIONS:
+;           --auto-compress
+;           --gzip(.gz)
+;           --xz(.xz)
+;           --bzip2(.bz2)
+;           --lzip(.lzip)
+;           --lzma(.lzma)
+;           --lzop(.lzop)
+;           --zstd(.zst)
+;           --exclude-vcs-ignores
+;           --verbose
+; 
+;  .gz:
+;        gzip
+;        gunzip
+;        zcat
+;        zless
+;        zmore
+;  
+;  .xz:
+;        xz
+;        unxz
+;        xzcat
+;  
+;  .bz2:
+;        bzip2
+;        bunzip2
+;        bzcat
+;  
+;  .lzma:
+;        lzma
+;        unlzma
+;        lzcat

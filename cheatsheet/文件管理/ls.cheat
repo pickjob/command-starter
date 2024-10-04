@@ -1,0 +1,10 @@
+% ln
+@ common
+
+; ls: 列出目录文件
+;       -l: long format
+;       --all
+;       --human-readable
+;       --recursive
+;       --sort=[none|size|time|version|extension]
+;       --reverse

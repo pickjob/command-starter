@@ -1,0 +1,18 @@
+% find
+@ common
+
+# 查找文件并执行命令
+find . -name '<pattern>' -exec echo {} \;
+
+; find [options] [path...] [expression]: 查找文件
+;       -name pattern
+;       -regex pattern
+;       -type:
+;           b: block
+;           c: character
+;           d: directory
+;           p: named pipe
+;           f: regular file
+;           l: symbolic link
+;           s: socket
+;       -exec command: 执行命令,  {} \; 绝对路径
