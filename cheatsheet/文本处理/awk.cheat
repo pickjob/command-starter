@@ -1,0 +1,34 @@
+% awk
+@ common
+
+; awk [options] [--] 'program' file: 切割字符串
+;       --assign=var=val
+;       --field-separator=fs: 分割字符
+;       --file=progfile
+;       'program': 'pattern { action statements }'
+;           pattern:
+;                /regular expression/
+;           action:
+;               print: 打印
+;               system('cmd args'): 调用系统函数
+;               函数:
+;                   length
+;                   substr
+;                   strftime
+;               流程控制:
+;                   if (condition) statement [ else statement ]
+;                   while (condition) statement
+;                   do statement while (condition)
+;                   for (expr1; expr2; expr3) statement
+;                   for (var in array) statement
+;                   break
+;                   continue
+;                   delete array[index]
+;                   delete array
+;                   exit [ expression ]
+;                   { statements }
+;                   switch (expression) {
+;                       case value|regex : statement
+;                       ...
+;                       [ default: statement ]
+;                   }

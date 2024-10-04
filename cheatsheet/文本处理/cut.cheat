@@ -1,0 +1,13 @@
+% cut
+@ common
+
+; cut OPTION... [FILE]: 切割字符串
+;       --delimiter=DELIM: 分割字符
+;       --bytes=LIST: 按字节
+;       --characters=LIST: 按字符选择
+;       --fields=LIST: 按字段选择
+;       
+;       N1, N2
+;       N1-
+;       -N2
+;       N1-N2

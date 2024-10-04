@@ -1,0 +1,14 @@
+% rg
+@ common
+
+# 查找文本
+rg <PATTERN>
+
+; rg: better grep
+;       --ignore-case / --ignore-file <PATH>...
+;       --line-number / --column
+;       --line-regexp
+;       --before-context <NUM> / --after-context <NUM> / --context <NUM>
+;       --glob <GLOB>
+;       --max-count <NUM> / --max-depth <NUM>
+;       --regexp <PATTERN>...

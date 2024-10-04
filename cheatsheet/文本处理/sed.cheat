@@ -1,0 +1,21 @@
+% sed
+@ common
+
+; sed [OPTION]... {script-only-if-no-other-script} [input-file]: 字符替换
+;       --expression=script / --file=script-file: 添加脚本
+;       --in-place: 替换
+;
+;       SCRIPT:
+;           [addr]X[options]
+;           addr:
+;               first~step
+;               addr1,~N: addr1, 后续N行
+;               addr1,+N: addr1, N行间隔
+;           X(command):
+;               a text: 后面插入行
+;               i text: 前面插入行
+;               s/regexp/replacement/[flags]: 替换
+;                   flags:
+;                       g: Apply the replacement to all matches to the regexp, not just the first
+;                       number: Only replace the numberth match of the regexp
+;                       i / I: case-insensitive s

@@ -1,0 +1,5 @@
+% more
+@ common
+
+; more [options] <file>...: 查看文件内容
+;       --lines <number>: 一屏多少行

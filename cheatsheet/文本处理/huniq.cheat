@@ -1,0 +1,9 @@
+% huniq
+@ common
+
+; huniq [OPTIONS]: 去重
+;       --delim <delimiter>: 分隔符
+;       --skip-fields: 过滤N行
+;       --count: 重复计数
+;       --sort
+;       --sort-descending

@@ -1,0 +1,8 @@
+% xxd
+@ common
+
+; xxd [options] [infile [outfile]]: 十六进制展示内容
+;       -u: HEX大写
+;       -c cols: 一行多少字节
+;       -g bytes: 一组多少字节
+；       -l len: 打印长度

@@ -1,0 +1,8 @@
+% grep
+@ common
+
+; grep [OPTION]... PATTERNS [FILE]: 查找内容
+;       --ignore-case: 忽略大小写
+;       --text: 文本处理
+;       --regexp=PATTERNS: 正则匹配
+;       --context=<N> / --after-context=<N> / --before-context=<N>: 展示前后控制

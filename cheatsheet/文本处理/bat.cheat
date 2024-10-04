@@ -1,0 +1,13 @@
+% bat
+@ common
+
+; bat [OPTIONS] [FILE]: 查看文件内容
+;       --color=always
+;       --style=full
+;       --highlight-line <N:M>: 高亮指定行
+;       --line-range <N:M>
+;       --diff: 仅显示git added/removed/modifed
+;       --diff-context <N>
+;       --wrap <mode>:
+;           auto, never, character
+;       --number: 展示行数

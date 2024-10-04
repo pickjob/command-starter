@@ -1,0 +1,7 @@
+% sort
+@ common
+
+; sort [OPTION]... [FILE]: 排序
+;       --ignore-case / --ignore-leading-blanks / --ignore-nonprinting: 忽略特殊字符
+;       --numeric-sort / --human-numeric-sort: 按数字排序
+;       --reverse: 倒叙

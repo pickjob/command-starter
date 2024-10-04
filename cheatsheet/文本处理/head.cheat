@@ -1,0 +1,7 @@
+% head
+@ common
+
+; head [OPTION]... [FILE]: 查看文件头
+;       --bytes=<N>: 展示开头指定字节数
+;       --lines=<N>: 展示开头指定行数
+;       --verbose

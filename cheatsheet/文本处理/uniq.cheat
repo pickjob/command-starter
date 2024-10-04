@@ -1,0 +1,7 @@
+% uniq
+@ common
+
+; uniq [OPTION]... [INPUT [OUTPUT]]: 去重
+;       --ignore-case
+;       --unique
+;       --count: 重复计数

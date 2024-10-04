@@ -1,0 +1,13 @@
+% sd
+@ common
+
+; sd [OPTIONS] <FIND> <REPLACE_WITH> [FILES]: 替换文本
+;       --flags <flags>
+;           i: case-insensitive
+;           c: case-sensitive
+;           m: multi-line
+;           e: disable multi-line
+;           s: . match new line
+;           w: match full words only
+;       --max-replacements <LIMIT>: 限制替换数量
+;       --preview

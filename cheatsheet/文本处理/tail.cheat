@@ -1,0 +1,8 @@
+% tail
+@ common
+
+; tail [OPTION]... [FILE]: 查看文件尾
+;       --bytes=<N>: 展示结尾指定字节数
+;       --lines=<N>: 展示结尾指定行数
+;       --follow: 持续输出
+;       --verbose
