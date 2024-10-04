@@ -1,0 +1,9 @@
+% df
+@ common
+
+# 统计磁盘使用情况
+df --human-readable
+
+; df [OPTION]... [FILE]: 查看磁盘使用情况
+;       --human-readable: 文件大小可读
+;       --inodes: inodes情况

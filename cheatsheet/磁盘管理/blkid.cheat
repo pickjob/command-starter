@@ -1,0 +1,5 @@
+% blkid
+@ common
+
+# 列出磁盘Label、UUID
+blkid

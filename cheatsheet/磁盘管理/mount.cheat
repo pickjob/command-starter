@@ -1,0 +1,26 @@
+% mount
+@ common
+
+# ntfs 挂载文件管理
+mount --type ntfs -o rw,auto,uid=uid,gid=gid,fmask=0066,dmask=0066 <device-path> <file-path>
+
+; mount -t type device dir: 挂载指定文件系统(/etc/fstab)
+;       --type
+;           - ext2、3、4
+;           - iso9660
+;           - vfat
+;           - ntfs
+;       --options
+;           ro / rw
+;           async / sync: 异步、同步
+;           atime / noatime: 更新操作时间
+;           exec / noexec: 允许文件执行
+;           user / group
+;           suid / nosuid: 指定用户ID
+;
+;           defaults:
+;               rw, suid, dev, exec, auto, nouser, async
+;
+;           ntfs:
+;               uid=value, gid=value and umask=value
+;       --verbose

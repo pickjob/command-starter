@@ -1,0 +1,5 @@
+% lsblk
+@ common
+
+; lsblk [options] [<device> ...]: 列出磁盘信息
+;       --output-all: 打印所有列

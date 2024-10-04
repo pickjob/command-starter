@@ -1,0 +1,13 @@
+% mkfs
+@ common
+
+; mkfs [options] [-t <type>] [fs-options] <device> [<size>]: 格式化磁盘
+;       --type=<type>
+;       --verbose
+; mkfs.ext4: 格式化磁盘EXT4
+;       -i bytes-per-inode: 一个inode block大小
+;       -I inode-size: 指定 inode 大小
+;       -N number-of-inodes: inode 数量
+;       -b block-size: 指定 block 大小
+;       -L volume-label: 设定磁盘Label
+;       -U UUID: 设定磁盘UUID
