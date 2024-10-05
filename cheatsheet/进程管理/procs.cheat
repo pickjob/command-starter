@@ -1,0 +1,12 @@
+% procs
+@ common
+
+# 列出所有进程
+procs --tree
+
+; procs [OPTIONS] [KEYWORD]: 进程列表
+;       --thread: 展示线程
+;       --tree: 树形展示
+;       --sorta / --sortd: 升序/降序排列
+;           cputime
+;       --watch / --watch-interval <second>: 持续监控
