@@ -1,0 +1,6 @@
+% lspci
+@ common
+
+; lspci [<switches>]: 列出硬件信息
+;       -k: 列出硬件驱动信息 
+;       -vv: 详细信息
