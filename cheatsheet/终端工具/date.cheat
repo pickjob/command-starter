@@ -1,0 +1,22 @@
+% date
+@ common
+
+# 格式化输出
+date +'%Y-%m-%d %H:%M:%S'
+
+# 昨日
+date --date='-1 DAY'
+
+; date [OPTION]... [+FORMAT]: 指定输出格式
+;       --date=STRING
+;           --date="10 days ago"
+;
+;           --date="2 day"
+;
+;       %Y-%m-%d %H:%M:%S
+;           %Y: year(0000-9999)
+;           %m: month(01-12)
+;           %d: day(01-31)
+;           %H: hour(00-23)
+;           %M: minute(00-59)
+;           %S: seconde(00-60)
