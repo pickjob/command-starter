@@ -1,0 +1,11 @@
+% wget
+@ common
+
+; wget [OPTION]... [URL]: 文件下载
+;       --timeout=SECONDS: 超时时间
+;       --tries=NUMBER: 重试次数
+;       --no-clobber: 不覆盖下载
+;       --no-check-certificate: 不校验证书
+;       --output-file=FILE: 记录日志
+;       --show-progress: 展示进度
+;       --verbose

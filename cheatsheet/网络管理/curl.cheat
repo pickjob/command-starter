@@ -1,0 +1,30 @@
+% curl
+
+# HTTP请求网址
+curl <url>
+
+# 响应输出到文件
+curl --request <method> --output <filename> <url>
+
+# 发送Form请求体
+curl --data <bodykey>=<bodyvalue> <url>
+
+# 发送Json请求体
+curl --request <method> --header 'Content-Type: application/json' -d '<json>' <url>
+
+# 自定义请求头
+curl --request <method> --header "<headername>: <headervalue>" <url>
+
+$ method: echo 'GET POST PUT DELETE PATCH' | tr ' ' '\n'
+
+; curl: 发送HTTP请求
+;       --http1.0 --http1.1 --http2
+;       --request GET|POST|PUT|DELETE
+;       --cookie-jar FILE
+;       --cookie FILE
+;       --header LINE
+;       --data DATA
+;       --data-urlencode
+;       --create-dirs
+;       --location
+;       --output <file>
