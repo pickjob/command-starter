@@ -1,0 +1,9 @@
+% kill
+@ common
+
+; kill [options] pid|name: 结束进程
+;       --signal signal
+;           SIGHUP  1
+;           SIGKILL 9
+;           SIGUSR1 10
+;       --verbose
