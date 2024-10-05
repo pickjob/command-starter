@@ -1,0 +1,5 @@
+% btm
+@ common
+
+; btm [OPTIONS]: 系统监控程序
+;       --rate <TIME>: 刷新时间, 默认1s
