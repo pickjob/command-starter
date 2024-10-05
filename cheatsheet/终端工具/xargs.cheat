@@ -1,0 +1,9 @@
+% xargs
+@ common
+
+; xargs [OPTION]... COMMAND [INITIAL-ARGS]: 根据输入流组装命令参数并执行
+;       --delimiter=delim
+;       --replace[=R]: 替换占位符(默认{})
+;       --arg-file=file: 从文件中读取参数
+;       --max-lines=MAX-LINES: 最大读取行数
+;       --verbose

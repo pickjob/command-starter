@@ -1,0 +1,20 @@
+% navi
+@ common
+
+; 
+; navi: 命令行交互cheatsheet
+; 
+; *.cheat 文件格式:
+;       ;: 注释
+;       %: cheatsheet起始, 应该包含tag
+;       @: 基于包含tag Cheatsheet
+;       #: 命令描述
+;       $: 生成候选参数命令
+;       
+; % Cheatsheet示例
+; 
+; # 描述内容
+; echo "Hello, <name>!"
+; 
+; ; 候选参数
+; $ name: whoami

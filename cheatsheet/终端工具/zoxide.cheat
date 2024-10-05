@@ -1,0 +1,11 @@
+% zoxide
+@ common
+
+; zoxide: smarter cd command
+;       环境变量:
+;             _ZO_ECHO: 1 时跳转前打印
+;             _ZO_MAXAGE: 最大条数
+;             _ZO_DATA_DIR: 缓存保存位置
+;             _ZO_FZF_OPTS: fzf参数
+;       配置:
+;             eval "$(zoxide init zsh)"
