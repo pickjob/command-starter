@@ -1,0 +1,11 @@
+% hwclock
+@ common
+
+# 硬件适应时间
+hwclock --systohc
+
+; hwclock [function] [option...]: 硬件时间管理
+;       --show: 展示时间
+;       --adjust: 自动调整硬件时钟时间
+;       --systohc: 系统时间写入硬件时钟
+;       --localtime: 使用本地时间
