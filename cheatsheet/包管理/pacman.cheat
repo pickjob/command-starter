@@ -1,0 +1,15 @@
+% pacman
+@ common
+
+# 更新系统
+pacman -Syu
+
+; pacman <operation> [...]: Arch系包管理
+;       查看已安装程序
+;           pacman -Q
+;       安装程序
+;           pacman -S <package_name>
+;       删除软件
+;           pacman -R <package_name>
+;       删除缓存
+;           pacman -Sc

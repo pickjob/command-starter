@@ -1,0 +1,13 @@
+% pip
+@ common
+
+; pip3 <command> [options]
+;       list
+;       show
+;       install [options] <package_name>
+;           --requirement <file>
+;           --progress-bar on
+;           --user
+;           --prefix <dir>
+;           --target <dir>
+;       --verbose
