@@ -1,0 +1,10 @@
+% du
+@ common
+
+# 统计文件大小
+du --human-readable --max-depth=1 .
+
+; du [OPTION]... [FILE]: 文件大小
+;       --inodes
+;       --max-depth=N
+;       --human-readable
