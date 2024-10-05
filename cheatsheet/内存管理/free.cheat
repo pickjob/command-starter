@@ -1,0 +1,8 @@
+% free
+@ common
+
+# 查看内存使用情况
+free --human --total --wide
+
+; free [options]: 查看内存使用情况
+;       --human: 人类可读
