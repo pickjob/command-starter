@@ -1,0 +1,16 @@
+% docker compose
+@ common
+
+# 启动服务(静默)
+docker compose --file $REPOSITORY/docker-compose/<compose_file> up -d
+
+# 停止服务
+docker compose --file $REPOSITORY/docker-compose/<compose_file> stop
+
+# 启动服务
+docker compose --file $REPOSITORY/docker-compose/<compose_file> up
+
+# 销毁服务
+docker compose --file $REPOSITORY/docker-compose/<compose_file> down
+
+$ compose_file: ls $REPOSITORY/docker-compose *.yaml
