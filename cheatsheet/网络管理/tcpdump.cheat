@@ -1,0 +1,23 @@
+% tcpdump
+
+# 根据IP抓包
+tcpdump  src or dst host <ip>  -w <ip>.cap
+
+; tcpdump [options] [protocol] [dir] [type]: 抓包
+;       protocol:
+;           tcp, udp, icmp
+;           ip, ip6
+;           arp, rarp
+;           ether, wlan
+;       dir:
+;           src
+;           dst
+;           src or dst
+;       type:
+;           host
+;           net
+;           port
+;           portrange
+;       options:
+;           -i ether: 指定网卡
+;           -w package.cap: 写文件
