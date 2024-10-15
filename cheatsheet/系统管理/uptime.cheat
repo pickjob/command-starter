@@ -1,0 +1,5 @@
+% uptime
+@ common
+
+# 启动时长
+uptime --pretty
