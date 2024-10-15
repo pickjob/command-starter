@@ -1,0 +1,7 @@
+% lsof
+@ common
+
+# 展示端口占用
+lsof -i :<port>
+
+; lsof -i[46] [protocol][@hostname|hostaddr][:service|port]: list open files

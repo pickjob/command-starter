@@ -1,0 +1,18 @@
+% fuser
+@ common
+
+; ufw: Uncomplicated Firewall
+;       status
+;       allow
+;           ufw allow <port>[/<protocol>]
+;           ufw allow <port>:<port>/<protocol>
+;       deny
+;           ufw deny <port>/<optional: protocol>
+;       delete
+;           ufw delete deny 80/tcp
+;       log:
+;           ufw logging on/off
+;       default
+;           ufw default allow/deny
+;       reload
+;       enable / disable

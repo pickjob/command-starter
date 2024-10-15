@@ -1,0 +1,11 @@
+% fuser
+@ common
+
+; fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME: 展示进程使用文件
+;       --mount: 进程使用文件
+;       --ipv4 / --ipv6
+;       --namespace SPACE:
+;           file, udp, or tcp
+;           [local_port][,[rmt_host][,[rmt_port]]]
+;       --user: 展示用户ID
+;       --verbose
