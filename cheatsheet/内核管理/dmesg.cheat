@@ -1,0 +1,10 @@
+% dmesg
+@ common
+
+; dmesg: 展示内核信息
+;       --clear: 清除内核 ring buffer
+;       --read-clear: 读取、清除所有信息
+;       --human: 可读
+;       --userspace: 展示用户信息
+;       --kernel: 展示内核信息
+;       --follow: 等待新信息

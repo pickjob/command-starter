@@ -1,0 +1,13 @@
+% modprobe
+@ common
+
+; modprobe: 记载模块
+;       --show-depends: 打印模块依赖
+;       --remove: 移除模块
+;       --verbose
+; 
+; 模块配置:
+;       /etc/modules-load.d/*.conf
+;       /etc/modprobe.d/*.conf
+; 模块:
+;       /lib/modules
