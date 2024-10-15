@@ -1,0 +1,18 @@
+% wl-clipboard
+@ common
+
+# 复制
+wl-copy <text>
+
+# 粘贴
+wl-paste
+
+; wl-clipboard: Wayland clipboard
+;       wl-copy: 复制
+;           --primary
+;           --foreground
+;           --trim-newline
+;           text
+;       wl-paste: 黏贴
+;           --primary
+;           --no-newline

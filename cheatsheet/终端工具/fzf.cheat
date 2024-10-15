@@ -1,0 +1,113 @@
+% cut
+@ common
+
+; fzf: 模糊搜索
+;       语法
+;             word: 模糊匹配
+;             'word: 精确匹配
+;             ^word: 前缀匹配
+;             word$: 后缀匹配
+;             **: 补全
+;       快捷键
+;             方向
+;                 CTRL-K / CTRL-J
+;             确认
+;                 Enter
+;             退出
+;                 ESC / CTRL-C / CTRL-G
+;             多选
+;                 TAB / Shift-TAB
+;             其他
+;                 Alt-C: cd into selected directory
+;                 CTRL-T: 复制到命令行
+;                 Ctrl-R: 复制到
+;       环境变量
+;             FZF_DEFAULT_COMMAND: 默认列表选项命令
+;             FZF_DEFAULT_OPTS: 默认命令选项
+;             FZF_TMUX_OPTS
+;       
+;             FZF_CTRL_T_COMMAND
+;             FZF_CTRL_T_OPTS
+;       
+;             FZF_CTRL_R_OPTS
+;       
+;             FZF_ALT_C_COMMAND
+;             FZF_ALT_C_OPTS
+;       布局
+;             --height=HEIGHT[%]
+;             --layout=[default|reverse|reverse-list]
+;             --border[=rounded|sharp|bold|block|thinblock|double|horizontal|vertical]
+;             --info=[default|right|hidden|inline[:SEPARATOR]|inline-right]
+;             --prompt=STR --pointer=STR --marker=STR: default: '>'
+;             --border-label=LABEL --header=STR
+;       预览
+;             --query=STRING
+;             --preview=COMMAND
+;                 {}: 当前行
+;                 {q}: query string
+;                 {n}: query string index
+;             --preview-label[=LABEL] --preview-label-pos[=N[:top|bottom]]
+;             --preview-window=[up|down|left|right][,SIZE[%]][,[no]wrap][,[no]follow][,[no]cycle]
+;       交互
+;             --cycle
+;             --multi[=Max]: 多选
+;             --bind=[key-map|event]:action
+;                 event:
+;                     start: 加载一次
+;                     load: 停止输入
+;                     change: query string 改变
+;                         fzf --bind=change:first
+;                     foucus: 选中改变
+;                     one: 唯一匹配
+;                     backward-eof: query string为空
+;                 action:
+;                     移动:
+;                         up                           ctrl-k  ctrl-p  up
+;                         down                         ctrl-j  ctrl-n  down
+;                         first / last
+;                         beginning-of-line            ctrl-a  home
+;                         end-of-line                  ctrl-e  end
+;                         page-up                      pgup
+;                         page-down                    pgdn
+;                         half-page-up / half-page-down
+;                         prev-selected / next-selected
+;                         pos(...)
+;                         jump / jump-accept
+;                     操作:
+;                         select / select-all / clear-selection
+;                         deselect / deselect-all
+;                         accept                       enter   double-click
+;                         accept-non-empty             (same as accept except that  it  prevents  fzf  from  exiting without selection)
+;                         yank                         ctrl-y
+;                         put                          (put the character to the prompt)
+;                         put(...)                     (put the given string to the prompt)
+;                         change-prompt(...)           (change prompt to the given string)
+;                         clear-screen                 ctrl-l
+;                         cancel                       (clear query string if not empty, abort fzf otherwise)
+;                         close                        (close preview window if open, abort fzf otherwise)
+;                         abort                        ctrl-c  ctrl-g  ctrl-q  esc
+;                     查询:
+;                         replace-query
+;                         change-query(...)            (change query string to the given string)
+;                         clear-query                  (clear query string)
+;                     预览:
+;                         preview(...)                 变更预览内容
+;                         preview-up                   shift-up
+;                         preview-down                 shift-down
+;                         preview-top / preview-bottom
+;                         preview-page-up / preview-page-down
+;                         preview-half-page-up / preview-half-page-down
+;                         change-preview(...)
+;                         change-preview-label(...) 
+;                         change-preview-window(...)
+;                         refresh-preview
+;                         toggle-preview / toggle-preview-wrap / show-preview / hide-preview
+;                     命令:
+;                         execute(...)                 脚本执行命令
+;                         execute-silent(...)          脚本执行命令, 后台执行
+;                         become(...)                  脚本执行命令, 替代当前进程
+;                         reload(...)                  命令输出重新加载fzf输入项
+;                         reload-sync(...)             命令输出重新加载fzf输入项, 同步
+;                     快捷键:
+;                         rebind(...)                  (rebind bindings after unbind)
+;                         unbind(...)                  (unbind bindings)
