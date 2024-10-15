@@ -1,0 +1,11 @@
+% rc-service
+@ common
+
+; OpenRC: 初始化管理工具
+;
+; 列出所有服务
+;       rc-update show -v
+; 服务管理
+;       rc-service <service> status / start / stop / restart
+; 设置服务默认RunLevel服务
+;       rc-update add <service> default
