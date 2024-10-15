@@ -1,0 +1,5 @@
+% tee
+@ common
+
+; tee [OPTION]... [FILE]: 输出流到文件、标准输出流
+;       --append: 追加到文件
