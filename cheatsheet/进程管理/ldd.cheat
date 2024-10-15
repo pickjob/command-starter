@@ -1,0 +1,8 @@
+% kill
+@ common
+
+# 展示程序依赖共享库信息
+ldd <file>
+
+; ldd: 展示程序动态链接库
+;       --verbose
