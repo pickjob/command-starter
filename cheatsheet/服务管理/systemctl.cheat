@@ -1,0 +1,23 @@
+% systemctl
+@ common
+
+# 服务状态
+systemctl status <service>
+
+# 启动服务
+systemctl start <service>
+
+# 重启服务
+systemctl restart <service>
+
+# 重新载入配置
+systemctl reload <service>
+
+# 停止服务
+systemctl stop <service>
+
+# 服务自启动
+systemctl enable <service>
+
+# 列出正在运行服务
+systemctl list-units --type=service --state=running
