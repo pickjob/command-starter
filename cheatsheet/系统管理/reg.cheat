@@ -1,0 +1,13 @@
+% reg
+@ common
+
+; REG Operation [Parameter List]: 注册表操作
+;       ADD <keyname> [/v valuename] [/t datatype] [/d data] [/f]
+;       注册表建:
+;           HKCR: HKEY_CLASSES_ROOT
+;           HKCU: HKEY_CURRENT_USER
+;           HKLM: HKEY_LOCAL_MACHINE
+;       数据类型:
+;           REG_SZ: 字符串
+;           REG_EXPAND_SZ: 可扩展字符串
+;           REG_BINARY: 二进制
