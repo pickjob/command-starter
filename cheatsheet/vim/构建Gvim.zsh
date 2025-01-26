@@ -5,11 +5,11 @@ cd vim/src
 CC=clang CXX=clang++ mingw32-make.exe -f Make_ming.mak clean
 CC=clang CXX=clang++ mingw32-make.exe -f Make_ming.mak \
     PYTHON3=/clang64 \
-    PYTHON3_VER=311 \
+    PYTHON3_VER=312 \
     PYTHON3_HOME=/clang64 \
-    PYTHON3INC=-I/clang64/include/python3.11 \
+    PYTHON3INC=-I/clang64/include/python3.12 \
     DYNAMIC_PYTHON3=yes \
-    DYNAMIC_PYTHON3_DLL=libpython3.11.dll \
+    DYNAMIC_PYTHON3_DLL=libpython3.12.dll \
     XPM=no \
     ARCH=x86-64
 cd vim
