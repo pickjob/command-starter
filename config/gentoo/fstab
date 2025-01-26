@@ -1,0 +1,21 @@
+# 
+# /etc/fstab: 文件系统
+#       <fs> <mountpoint> <type> <opts> <dump/pass> <fsck>
+#           fs: block设备
+#           mountpoint: 分区挂载点
+#           type: 文件系统的类型
+#           opts: mount 挂载选项
+#           dump/pass: 0
+#           fsck:
+#               0-不需要自检
+#               1-根文件系统
+#               2-其它
+#       example:
+#           LABEL=boot /boot ext4 noauto,noatime 1 2
+#           UUID=58e72203-57d1-4497-81ad-97655bd56494 / ext4 noatime 0 1
+#           LABEL=swap none swap sw 0 0
+#           /dev/cdrom /mnt/cdrom auto noauto,ro 0 0
+# 
+LABEL=EFI   /boot    vfat   defaults,noatime 0 2
+LABEL=DATA  /        ext4   defaults,noatime 0 1
+/dev/sda2  /home/china/DATA ntfs3 rw,uid=1000,gid=1000,noatime  0 0

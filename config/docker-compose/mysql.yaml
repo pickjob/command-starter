@@ -1,0 +1,29 @@
+# 
+# mysql:
+#   环境变量:
+#       MYSQL_ROOT_PASSWORD
+#       MYSQL_DATABASE
+#       MYSQL_USER、MYSQL_PASSWORD
+#   端口:
+#       3306
+#   首次执行脚本目录:
+#       /docker-entrypoint-initdb.d
+#           *.sh、*.sql、*.sql.gz:
+#   配置文件:
+#       /etc/mysql/my.cnf
+#   数据文件:
+#       /var/lib/mysql
+services:
+    db:
+        image: mysql:9.0
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: chinese
+            MYSQL_DATABASE: database
+        env_file:
+            - ./common.env
+        networks:
+            - mysql-net
+networks:
+    mysql-net:
+        driver: bridge

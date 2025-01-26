@@ -1,0 +1,10 @@
+# 
+# /etc/portage/package.mask: 禁止安装的程序包
+#       example:
+#           # Mask with pacakage
+#           dev-db/mysql
+#           # Mask with versions
+#           >=sys-power/powertop-1.97
+#           # Mask with package & version
+#           virtual/jdk:1.7
+#

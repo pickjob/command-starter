@@ -1,0 +1,17 @@
+# %CARGO_HOME%\config.toml
+[cargo-new]
+email = "pickjob@126.com"
+name = "吴胜"
+vcs = "git"
+
+[env]
+CC = "clang"
+# CFLAGS
+CXX = "clang++"
+# CXXFLAGS
+
+[profile.release]
+lto = true
+opt-level = 3
+incremental = false
+panic = "unwind"

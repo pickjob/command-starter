@@ -1,0 +1,19 @@
+# 
+# nginx:
+#   端口 s:
+#       80
+#   配置文件:
+#       /etc/nginx/nginx.conf
+#   静态文件路径:
+#       /usr/share/nginx/html
+services:
+    proxy:
+        image: nginx:1.27.0-alpine
+        restart: always
+        env_file:
+            - ./common.env
+        networks:
+            - nginx-net
+networks:
+    nginx-net:
+        driver: bridge

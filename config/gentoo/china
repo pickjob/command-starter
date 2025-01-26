@@ -1,0 +1,2 @@
+# /etc/sudoer.d/china
+china ALL = (ALL) ALL

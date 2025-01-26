@@ -1,0 +1,122 @@
+ZDOTDIR=~/.zsh
+
+case "$OSTYPE" in
+    msys*)
+        REPOSITORY=$MSYS_REPOSITORY
+        export REPOSITORY
+        DAILY_BACKUP=$MSYS_DAILY_BACKUP
+        export DAILY_BACKUP
+        PACKAGE_HOME=$REPOSITORY/packages
+        
+        # maven
+        MAVEN_REPOSITORY=$PACKAGE_HOME/maven-win
+        export MAVEN_REPOSITORY
+
+        # gradle
+        GRADLE_USER_HOM=$PACKAGE_HOME/gradle-win
+        export GRADLE_USER_HOME
+
+        # cargo
+        CARGO_HOME=$PACKAGE_HOME/cargo-win
+        CARGO_INSTALL_ROOT=$REPOSITORY
+        CARGO_TARGET_DIR=$CARGO_HOME/cache
+        export CARGO_HOME
+        export CARGO_INSTALL_ROOT
+        export CARGO_TARGET_DIR
+
+        # pip
+        PIP_HOME=$PACKAGE_HOME/pip-win
+        PIP_PREFIX=$PIP_HOME
+        export PIP_PREFIX
+        PIP_CONFIG_FILE=$PIP_HOME/pip.ini
+        export PIP_CONFIG_FILE
+        PYTHONPATH=$PIP_PREFIX/lib/python3.11/site-packages
+        export PYTHONPATH
+
+        # npm
+        NPM_HOME=$PACKAGE_HOME/npm-win
+        npm_config_prefix=$NPM_HOME
+        export npm_config_prefix
+        npm_config_cache=$NPM_HOME/cache
+        export npm_config_cache
+
+        # go
+        GO111MODULE=on
+        GOPROXY=https://goproxy.cn
+        GOPATH=$PACKAGE_HOME/go-linux
+        export GO111MODULE
+        export GOPROXY
+        export GOPATH
+
+        # zsh
+        ZSH_PLUGINS=${REPOSITORY}/packages/zsh-win
+        # return
+    ;;
+    linux*)
+        REPOSITORY=~/repository
+        export REPOSITORY
+        DAILY_BACKUP=~/daily_backup
+        export DAILY_BACKUP
+        PACKAGE_HOME=$REPOSITORY/packages
+
+        # maven
+        MAVEN_REPOSITORY=$PACKAGE_HOME/maven-linux
+        export MAVEN_REPOSITORY
+
+        # gradle
+        GRADLE_USER_HOM=$PACKAGE_HOME/gradle-linux
+        export GRADLE_USER_HOME
+
+        # cargo
+        CARGO_HOME=$PACKAGE_HOME/cargo-linux
+        CARGO_INSTALL_ROOT=$REPOSITORY
+        CARGO_TARGET_DIR=$CARGO_HOME/cache
+        export CARGO_HOME
+        export CARGO_INSTALL_ROOT
+        export CARGO_TARGET_DIR
+
+        # pip
+        PIP_HOME=$PACKAGE_HOME/pip-linux
+        PIP_PREFIX=$PIP_HOME
+        export PIP_PREFIX
+        PIP_CONFIG_FILE=$PIP_HOME/pip.ini
+        export PIP_CONFIG_FILE
+        PYTHONPATH=$PIP_PREFIX/lib/python3.11/site-packages
+        export PYTHONPATH
+
+        # npm
+        NPM_HOME=$PACKAGE_HOME/npm-linux
+        npm_config_prefix=$NPM_HOME
+        export npm_config_prefix
+        npm_config_cache=$NPM_HOME/cache
+        export npm_config_cache
+
+        # go
+        GO111MODULE=on
+        GOPROXY=https://goproxy.cn
+        GOPATH=$PACKAGE_HOME/go-linux
+        export GO111MODULE
+        export GOPROXY
+        export GOPATH
+
+        # intellj
+        IDEA_PROPERTIES=$PACKAGE_HOME/intellj-plugins/idea.properties
+        export IDEA_PROPERTIES
+        IDEA_VM_OPTIONS=$PACKAGE_HOME/intellj-plugins/idea64.exe.vmoptions
+        export IDEA_VM_OPTIONS
+
+        # zsh
+        ZSH_PLUGINS=${REPOSITORY}/packages/zsh-linux
+        # return
+    ;;
+esac
+
+ZSH_CACHE=${ZDOTDIR}/cache
+if [[ ! -e  ${ZSH_CACHE} ]]; then
+    mkdir --parent ${ZSH_CACHE}
+fi
+
+# 加载其他zshenv
+for ZSHENV_FILE in ${ZDOTDIR}/*.zshenv(.onN); do
+    source "${ZSHENV_FILE}"
+done

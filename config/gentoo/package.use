@@ -1,0 +1,8 @@
+#
+# /etc/portage/package.use: 指定程序包USE标志配置
+#       example:
+#           # Globally disable USE flags
+#           */* -bluetooth
+#           # enable the USE flag
+#           app-admin/sudo offensive
+#

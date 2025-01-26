@@ -1,0 +1,9 @@
+# 
+# /etc/systemd/network/20-ethernet.Network
+#       example:  /usr/lib/systemd/network/*.network.example
+#
+[Match]
+Name=en*
+
+[Network]
+DHCP=yes

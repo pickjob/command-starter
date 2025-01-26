@@ -1,0 +1,22 @@
+# 
+# redis:
+#   端口:
+#       6379
+#   配置文件:
+#       /usr/local/etc/redis/redis.conf
+#   数据文件:
+#       /data
+# 
+services:
+    cache:
+        image: redis:7.4-alpine
+        restart: always
+        env_file:
+            - ./common.env
+        ports:
+            - "6379:6379"
+        networks:
+            - redis-net
+networks:
+    redis-net:
+        driver: bridge

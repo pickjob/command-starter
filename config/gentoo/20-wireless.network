@@ -1,0 +1,9 @@
+# 
+# /etc/systemd/network/20-wireless.Network
+#       example:  /usr/lib/systemd/network/*.network.example
+#
+[Match]
+Name=wl*
+
+[Network]
+DHCP=yes

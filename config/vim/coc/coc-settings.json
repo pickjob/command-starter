@@ -1,0 +1,22 @@
+{
+    "colors.enable": true,
+    "suggest.selection": "recentlyUsed",
+    "workspace.rootPatterns": [
+        ".git",
+        ".project"
+    ],
+    "coc.preferences.formatOnSave": true,
+    "coc.preferences.maxFileSize": "1GB",
+    "session.directory": "${env:REPOSITORY}/packages/vim-runtime/session",
+    "snippets.ultisnips.directories": [
+        "honza/vim-snippets"
+    ],
+    "languageserver": {
+        "qml": {
+            "command": "qmlls",
+            "filetypes": [
+                "qml"
+            ]
+        }
+    }
+}

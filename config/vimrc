@@ -1,0 +1,140 @@
+"
+" 基本设置
+"
+" 禁用 vi 兼容模式
+set nocompatible
+" 无错误声音
+set noerrorbells
+set novisualbell
+" 延迟绘制（提升性能）
+set lazyredraw
+"
+" 基本界面信息
+"
+" 语法高亮
+syntax enable
+syntax on
+" 显示匹配的括号
+set showmatch
+set matchpairs=(:),{:},[:],<:>
+" 设置制表符可视
+set list
+set listchars=tab:>-,precedes:<,extends:>,trail:-
+" 突出当前行、列
+set cursorline
+set cursorcolumn
+" 显示行号
+set number
+" 显示光标位置
+set ruler
+" 显示侧边栏
+set signcolumn=yes
+" 显示状态栏
+set laststatus=2
+" 右下角显示命令
+set showcmd
+"
+" 文件类型插件
+"
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+"
+" 缩进、换行相关
+" 
+" 关闭自动换行
+set nowrap
+" 自动缩进
+set autoindent
+set smartindent
+set smarttab
+" space替换tab
+set expandtab
+set softtabstop=4
+set tabstop=4
+" 按shift缩进空格数
+set shiftwidth=4
+"
+" 搜索设置
+"
+" 高亮搜索内容
+set hlsearch
+" 搜索时忽略大小写
+set ignorecase
+" 智能搜索大小写判断, 小写不判断, 大写判断
+set smartcase
+" 查找输入时动态增量显示查找结果
+set incsearch
+" 
+" WildMenu
+" 
+set wildmenu
+set wildmode=list:longest,full
+set wildignore=*.pyc
+"
+" 设置内部编码
+" 
+set fileformat=unix
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,ucs-bom,gbk
+" 如遇Unicode值大于255的文本, 不必等到空格再折行
+set formatoptions+=m
+" 合并两行中文时，不在中间加空格
+set formatoptions+=B
+"
+" 默认行为
+"
+" 切换当前目录
+set autochdir
+set autoshelldir
+" 水平切割默认右侧
+set splitright
+" 设置 Backspace 键模式
+set backspace=indent,eol,start
+"
+" 备份相关
+" 
+" 禁止备份
+set nobackup
+set nowritebackup
+" 禁用交换文件
+set noswapfile
+" 禁止undo文件
+set noundofile
+set nowritebackup
+"
+" 自动检测外部更改
+" 
+set autoread
+set autowrite
+set autowriteall
+set updatetime=1000
+" 
+" 会话保存
+" 
+set sessionoptions+=resize,unix,slash
+" 
+" GVIM配置
+" 
+if has('gui_running')
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions+=a
+    if has('unix')
+        set guifont=FiraCode\ Nerd\ Font\ Mono\ 16
+    elseif has('win32')
+        set guifont=FiraCode_Nerd_Font_Mono:h16
+    endif
+endif
+
+execute 'set runtimepath+=' .. $REPOSITORY .. '/packages/vim-runtime'
+
+let mapleader = ";"
+
+" 加载 config下配置
+let configs = $REPOSITORY .. '/packages/vim-runtime'
+for config in readdir(configs, {n -> n =~ '.vim$'})
+    execute $'source {configs}/{config}'
+endfor

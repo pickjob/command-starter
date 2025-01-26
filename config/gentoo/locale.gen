@@ -1,0 +1,12 @@
+#
+# /etc/locale.gen: <locale name> <charset>
+#       <locale name>
+#           /usr/share/i18n/locales/
+#       <charset>
+#           /usr/share/i18n/charmaps/
+#       supported combinations, see the file:
+#           /usr/share/i18n/SUPPORTED
+#
+C.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8

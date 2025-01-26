@@ -1,0 +1,63 @@
+# 
+# zookeeper:
+#   环境变量:
+#       ZOO_MY_ID: 1
+#       ZOO_SERVERS: server.1=zk1:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=zk3:2888:3888;2181
+# 
+#       ZOO_TICK_TIME: 2000
+#       ZOO_INIT_LIMIT: 5
+#       ZOO_SYNC_LIMIT: 2
+#       ZOO_MAX_CLIENT_CNXNS: 60
+#       ZOO_STANDALONE_ENABLED: true
+#       ZOO_ADMINSERVER_ENABLED: true
+#       ZOO_AUTOPURGE_PURGEINTERVAL: 0
+#       ZOO_AUTOPURGE_SNAPRETAINCOUNT: 3
+#       ZOO_4LW_COMMANDS_WHITELIST: srvr
+#   端口:
+#       2181
+#   配置文件:
+#       /conf/zoo.cfg
+# 
+services:
+    zk1:
+        image: zookeeper:3.9-jre-17
+        restart: always
+        hostname: zk1
+        env_file:
+            - ./common.env
+        environment:
+            ZOO_MY_ID: 1
+            ZOO_SERVERS: server.1=zk1:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=zk3:2888:3888;2181
+        ports:
+            - 2181:2181
+        networks:
+            - zk-net
+    zk2:
+        image: zookeeper:3.9-jre-17
+        restart: always
+        hostname: zk2
+        env_file:
+            - ./common.env
+        environment:
+            ZOO_MY_ID: 2
+            ZOO_SERVERS: server.1=zk1:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=zk3:2888:3888;2181
+        ports:
+            - 2182:2181
+        networks:
+            - zk-net
+    zk3:
+        image: zookeeper:3.9-jre-17
+        restart: always
+        hostname: zk3
+        env_file:
+            - ./common.env
+        environment:
+            ZOO_MY_ID: 3
+            ZOO_SERVERS: server.1=zk1:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=zk3:2888:3888;2181
+        ports:
+            - 2183:2181
+        networks:
+            - zk-net
+networks:
+    zk-net:
+        driver: bridge

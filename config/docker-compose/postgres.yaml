@@ -1,0 +1,40 @@
+# 
+# postgresql:
+#   default config:
+#       docker run -i --rm postgres cat /usr/share/postgresql/postgresql.conf.sample > postgresql.conf.sample
+#   环境变量:
+#       POSTGRES_USER
+#       POSTGRES_PASSWORD
+#       POSTGRES_HOST_AUTH_METHOD
+#       POSTGRES_DB
+#       PGDATA
+#       POSTGRES_INITDB_WALDIR
+#   端口:
+#       5432
+#   首次执行脚本目录:
+#       /docker-entrypoint-initdb.d
+#           *.sh:
+#               psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
+#                   CREATE USER docker;
+#               EOSQL
+#   配置文件:
+#       /etc/postgresql/postgresql.conf
+#   数据文件:
+#       /var/lib/postgresql/data
+services:
+    db:
+        image: postgres:16-alpine
+        restart: always
+        environment:
+            POSTGRES_USER: china
+            POSTGRES_PASSWORD: chinese
+            POSTGRES_DB: database
+        env_file:
+            - ./common.env
+        ports:
+            - "5432:5432"
+        networks:
+            - postgresql-net
+networks:
+    postgresql-net:
+        driver: bridge

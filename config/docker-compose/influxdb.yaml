@@ -1,0 +1,31 @@
+# 
+# influxdb2:
+#   环境变量:
+#       DOCKER_INFLUXDB_INIT_MODE: setup
+#       DOCKER_INFLUXDB_INIT_USERNAME
+#       DOCKER_INFLUXDB_INIT_PASSWORD
+#       DOCKER_INFLUXDB_INIT_ORG
+#       DOCKER_INFLUXDB_INIT_BUCKET
+#       DOCKER_INFLUXDB_INIT_RETENTION
+#       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+#   端口:
+#       8086
+#   首次执行脚本目录:
+#       /docker-entrypoint-initdb.d
+#           *.sh
+#   配置文件:
+#       /etc/influxdb2
+#   数据文件:
+#       /var/lib/influxdb2 s
+# 
+services:
+    db:
+        image: influxdb:2.7-alpine
+        restart: always
+        env_file:
+            - ./common.env
+        networks:
+            - influxdb-net
+networks:
+    influxdb-net:
+        driver: bridge
