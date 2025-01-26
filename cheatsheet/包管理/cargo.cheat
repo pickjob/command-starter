@@ -1,17 +1,10 @@
 % cargo
 @ common
 
-# 更新所有安装程序
-cargo install-update -a
-
-# 项目依赖树
-cargo tree
-
-# 更新项目
-cargo update
-
-# 构建空项目
-cargo build --release
-
-# 新建空项目
-cargo new --bin <project_name>
+; cargo [OPTIONS] [COMMAND]: Rust程序包管理
+;       --list: 列出子命令
+;       init
+;       build
+;       run
+;       install
+;       clean

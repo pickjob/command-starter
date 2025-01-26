@@ -1,17 +1,13 @@
-; 
-; PIP:
-;       pip
-;           list
-;           install
-;               --requirement <file>
-;               --user
-;           freeze > requirements.txt
-; 
-; 
-;           python -m pip completion --zsh >> ~/.zprofile
-; 
 % pip
 @ common
 
-# pip 安装程序
-pip install <package_name>
+; pip3 <command> [options]
+;       list
+;       show
+;       install [options] <package_name>
+;           --requirement <file>
+;           --progress-bar on
+;           --user
+;           --prefix <dir>
+;           --target <dir>
+;       --verbose
