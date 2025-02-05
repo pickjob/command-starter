@@ -74,6 +74,7 @@ SETX GOPROXY https://goproxy.cn
 SETX GOPATH %PACKAGE_HOME%\go-win
 
 @REM IntellJ
+MKDIR %PACKAGE_HOME%\intellj-plugins
 COPY /Y .\config\idea.properties %PACKAGE_HOME%\intellj-plugins\idea.properties
 ECHO. > %PACKAGE_HOME%\intellj-plugins\idea64.exe.vmoptions
 for /f "delims=" %%i in (.\config\idea64.exe.vmoptions) do (
@@ -91,24 +92,11 @@ XCOPY .\config\vim %PACKAGE_HOME%\vim-runtime /S /Y
 SET Path=%REPOSITORY%\development\gvim-win-9.1;%Path%
 REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\DefaultIcon  /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\",0" /f
 REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\shell\open\command /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\" %%1" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.asm  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.c  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.conf  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.csv  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.gitignore  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.java  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.kt  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.kts  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.log  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.md  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.npmrc  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.nss  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.properties  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.py  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.rs  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.txt  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.wslconf  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.xml  /t REG_SZ /d "GVIM" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\.vim  /t REG_SZ /d "GVIM" /f
+
+SET SUFFIXS=.asm .bat .c .conf .csv .gitignore .ini .java .json .kt .kts .log .md .npmrc .nss .properties .py .rs .toml .txt .wslconf .xml .vim
+(FOR %%s IN (%SUFFIXS%) DO (
+   ECHO Register %%s
+   REG ADD HKEY_CURRENT_USER\Software\Classes\%%s  /t REG_SZ /d "GVIM" /f
+))
 
 SETX Path %Path%
