@@ -15,11 +15,13 @@ for dir in $( fd . $REPOSITORY --type d --max-depth 2 | fzf --multi); do
         if [[ ! -e ${destion_prefix} ]]; then
             mkdir --parent ${destion_prefix}
         fi
-        tar --create --xz --verbose --file ${destion_prefix}/${dir_name}.tar.xz --directory=${dir:h} $dir_name
+        # tar --create --xz --verbose --file ${destion_prefix}/${dir_name}.tar.xz --directory=${dir:h} $dir_name
+        7z a -pchinese -v1G ${destion_prefix}/${dir_name}.7z $dir
     else
         if [[ ! -e  ${destion_prefix}/${root_dir} ]]; then
             mkdir --parent ${destion_prefix}/${root_dir}
         fi
-        tar --create --xz --verbose --file ${destion_prefix}/${root_dir}/${dir_name}.tar.xz --directory=${dir:h} $dir_name
+        # tar --create --xz --verbose --file ${destion_prefix}/${root_dir}/${dir_name}.tar.xz --directory=${dir:h} $dir_name
+        7z a -pchinese -v500M ${destion_prefix}/${root_dir}/${dir_name}.7z $dir
     fi
 done

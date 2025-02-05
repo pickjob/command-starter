@@ -4,7 +4,7 @@ case "$OSTYPE" in
     msys*)
         REPOSITORY=$MSYS_REPOSITORY
         export REPOSITORY
-        DAILY_BACKUP=$MSYS_DAILY_BACKUP
+        DAILY_BACKUP=$MSYS_REPOSITORY_BACKUP
         export DAILY_BACKUP
         PACKAGE_HOME=$REPOSITORY/packages
         

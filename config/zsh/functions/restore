@@ -7,13 +7,15 @@ for f in $( fd . $DAILY_BACKUP --type f --max-depth 3 | sort --human-numeric-sor
         if [[ ! -e ${REPOSITORY} ]]; then
             mkdir --parent ${REPOSITORY}
         fi
-        tar --verbose --extract --file=${DAILY_BACKUP}/${month}/${file} --directory=${REPOSITORY}
+        # tar --verbose --extract --file=${DAILY_BACKUP}/${month}/${file} --directory=${REPOSITORY}
+        7z x -pchinese -o${REPOSITORY} ${DAILY_BACKUP}/${month}/${file}
     else
         dir=${month}
         month=${f[(( ${#f:h:h:h} + 2 )), (( ${#f:h:h} ))]}
         if [[ ! -e  ${REPOSITORY}/${dir} ]]; then
             mkdir --parent ${REPOSITORY}/${dir}
         fi
-        tar --verbose --extract --file=${DAILY_BACKUP}/${month}/${dir}/${file} --directory=${REPOSITORY}/${dir}
+        # tar --verbose --extract --file=${DAILY_BACKUP}/${month}/${dir}/${file} --directory=${REPOSITORY}/${dir}
+        7z x -pchinese -o${REPOSITORY}/${dir} ${DAILY_BACKUP}/${month}/${dir}/${file}
     fi
 done

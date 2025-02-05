@@ -1,5 +1,6 @@
 pacman -S \
     mingw-w64-clang-x86_64-fzf \
+    mingw-w64-clang-x86_64-7zip \
     mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-cmake \
     mingw-w64-clang-x86_64-clang mingw-w64-clang-x86_64-clang-tools-extra mingw-w64-clang-x86_64-gcc-compat mingw-w64-clang-x86_64-ccache \
     mingw-w64-clang-x86_64-rust \
