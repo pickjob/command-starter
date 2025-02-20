@@ -1,23 +1,8 @@
 SETLOCAL enabledelayedexpansion
 
-SET PACKAGE_HOME=%REPOSITORY%\packages
 SET Path=C:\WINDOWS\system32;C:\WINDOWS;
 
-@REM lsd
-MKDIR %APPDATA%\lsd
-COPY /Y .\config\lsd.yaml %APPDATA%\lsd\config.yaml
-@REM bat
-COPY /Y .\config\bat.conf %REPOSITORY%\bat.conf
-@REM wsl
-COPY /Y .\config\wslconfig %UserProfile%\.wslconfig
-
-@REM git
-COPY /Y .\config\gitconfig %USERPROFILE%\.gitconfig
-SET Path=%REPOSITORY%\development\git-win-2.47\bin;%Path%
-@REM svn
-SET Path=%REPOSITORY%\development\subversion-win-1.14\bin;%Path%
-@REM psql
-SET Path=%REPOSITORY%\development\postgresql-win-17.2\bin;%Path%
+SET PACKAGE_HOME=%REPOSITORY%\packages
 
 @REM msys2
 SET MSYS2_HOME=%REPOSITORY%\development\msys64
@@ -27,15 +12,30 @@ COPY /Y .\config\minttyrc %MSYS2_HOME%\home\%USERNAME%\.minttyrc
 COPY /Y .\config\gitconfig %MSYS2_HOME%\home\%USERNAME%\.gitconfig
 ECHO. > %MSYS2_HOME%\home\%USERNAME%\.zshrc
 MKDIR %MSYS2_HOME%\home\%USERNAME%\.zsh
-XCOPY .\config\zsh %MSYS2_HOME%\home\%USERNAME%\.zsh /S /Y
+ROBOCOPY .\config\zsh %MSYS2_HOME%\home\%USERNAME%\.zsh /S /XO /V
 MKDIR %PACKAGE_HOME%\zsh-win
-XCOPY .\config\zsh-plugin %PACKAGE_HOME%\zsh-win /S /Y
+ROBOCOPY .\config\zsh-plugin %PACKAGE_HOME%\zsh-win /S /XO /V
 MKDIR %MSYS2_HOME%\home\%USERNAME%\.ssh
-XCOPY .\ssh %MSYS2_HOME%\home\%USERNAME%\.ssh /S /Y
+ROBOCOPY .\ssh %MSYS2_HOME%\home\%USERNAME%\.ssh /S /XO /V
 SET Path=%MSYS2_HOME%\clang64\bin;%MSYS2_HOME%\usr\bin;%Path%
 
 @REM other tools
 SET Path=%REPOSITORY%\bin;%Path%
+@REM git
+COPY /Y .\config\gitconfig %USERPROFILE%\.gitconfig
+SET Path=%REPOSITORY%\development\git-win-2.47\bin;%Path%
+@REM svn
+SET Path=%REPOSITORY%\development\subversion-win-1.14\bin;%Path%
+@REM psql
+SET Path=%REPOSITORY%\development\postgresql-win-17.2\bin;%Path%
+
+@REM lsd
+MKDIR %APPDATA%\lsd
+COPY /Y .\config\lsd.yaml %APPDATA%\lsd\config.yaml
+@REM bat
+COPY /Y .\config\bat.conf %REPOSITORY%\bat.conf
+@REM wsl
+COPY /Y .\config\wslconfig %UserProfile%\.wslconfig
 
 @REM maven
 SETX MAVEN_REPOSITORY %PACKAGE_HOME%\maven-win
@@ -73,6 +73,25 @@ SETX GO111MODULE on
 SETX GOPROXY https://goproxy.cn
 SETX GOPATH %PACKAGE_HOME%\go-win
 
+@REM WindowsTerminal
+SET Path=%REPOSITORY%\development\windows-terminal-1.21;%Path%
+
+@REM vim
+COPY /Y .\config\vimrc %UserProfile%\_vimrc
+MKDIR %PACKAGE_HOME%\vim-runtime
+ROBOCOPY .\config\vim %PACKAGE_HOME%\vim-runtime /S /XO /V
+REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\DefaultIcon  /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\",0" /f
+REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\shell\open\command /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\" %%1" /f
+SET Path=%REPOSITORY%\development\gvim-win-9.1;%Path%
+SET SUFFIXS=.asm .bat .c .conf .csv .gitignore .ini .java .json .kt .kts .log .md .npmrc .nss .properties .py .rs .svg .toml .txt .wslconf .xml .vim .yaml .yml .zsh
+(FOR %%s IN (%SUFFIXS%) DO (
+   ECHO Register %%s
+   REG ADD HKEY_CURRENT_USER\Software\Classes\%%s  /t REG_SZ /d "GVIM" /f
+))
+
+@REM VsCode
+SET Path=%REPOSITORY%\development\vscode-win-1.96;%Path%
+
 @REM IntellJ
 MKDIR %PACKAGE_HOME%\intellj-plugins
 COPY /Y .\config\idea.properties %PACKAGE_HOME%\intellj-plugins\idea.properties
@@ -84,19 +103,6 @@ for /f "delims=" %%i in (.\config\idea64.exe.vmoptions) do (
 )
 SETX IDEA_PROPERTIES %PACKAGE_HOME%\intellj-plugins\idea.properties
 SETX IDEA_VM_OPTIONS %PACKAGE_HOME%\intellj-plugins\idea64.exe.vmoptions
-
-@REM vim
-COPY /Y .\config\vimrc %UserProfile%\_vimrc
-MKDIR %PACKAGE_HOME%\vim-runtime
-XCOPY .\config\vim %PACKAGE_HOME%\vim-runtime /S /Y
-SET Path=%REPOSITORY%\development\gvim-win-9.1;%Path%
-REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\DefaultIcon  /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\",0" /f
-REG ADD HKEY_CURRENT_USER\Software\Classes\GVIM\shell\open\command /t REG_SZ /d "\"%REPOSITORY%\development\gvim-win-9.1\gvim.exe\" %%1" /f
-
-SET SUFFIXS=.asm .bat .c .conf .csv .gitignore .ini .java .json .kt .kts .log .md .npmrc .nss .properties .py .rs .toml .txt .wslconf .xml .vim
-(FOR %%s IN (%SUFFIXS%) DO (
-   ECHO Register %%s
-   REG ADD HKEY_CURRENT_USER\Software\Classes\%%s  /t REG_SZ /d "GVIM" /f
-))
+SET Path=%REPOSITORY%\development\idea-win-2024.3\bin;%Path%
 
 SETX Path %Path%

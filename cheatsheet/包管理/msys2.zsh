@@ -1,4 +1,6 @@
 pacman -S \
+    zsh \
+    rsync \
     mingw-w64-clang-x86_64-fzf \
     mingw-w64-clang-x86_64-7zip \
     mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-cmake \
@@ -9,6 +11,3 @@ pacman -S \
     mingw-w64-clang-x86_64-python-ruff \
     mingw-w64-clang-x86_64-python-ruff-lsp \
     mingw-w64-clang-x86_64-nodejs
-
-# go
-pacman -S mingw-w64-clang-x86_64-go

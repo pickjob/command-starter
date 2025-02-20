@@ -1,0 +1,10 @@
+% rsync
+@ common
+
+; rsync [OPTION]... SRC [SRC]... DEST: 增量同步
+;       --mkpath: 创建目录路径
+;       --perms --owner --group --times --atimes --crtimes: 属性
+;       --recursive: 递归
+;       --delete: 允许目标文件夹删除
+;       --exclude=PATTERN --exclude-from=FILE: 排除策略 
+;       --verbose
